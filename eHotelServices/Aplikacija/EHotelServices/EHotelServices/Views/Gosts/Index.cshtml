@@ -1,0 +1,74 @@
+﻿@model IEnumerable<EHotelServices.Models.Gost>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Gosti </h2>
+
+
+      <table class="table" style="background-color:white; color:black; opacity:0.9">
+            <tr style="color: darkred">
+                <th>
+                @Html.DisplayNameFor(model => model.Username)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Prezime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BrLK)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Racun)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eMail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Odobren)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Prezime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BrLK)
+                    </td>
+                    
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Racun)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.eMail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Odobren)
+                    </td>
+                    <td>
+                        |
+                        @Html.ActionLink("Details", "Details", new { id = item.GostId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.GostId }) |
+                        @if (item.Odobren == false)
+                        {
+                        @Html.ActionLink("Odobri", "Odobri", new { username = item.Username })
+                        }
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </>

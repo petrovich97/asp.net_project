@@ -1,0 +1,83 @@
+﻿@model EHotelServices.Models.Gost
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Profil</h2>
+
+<div>
+    <h4>Gost</h4>
+    <hr />
+    <dl class="dl-horizontal" style="background-color:aliceblue; opacity:0.9">
+        <dt style="color:black">
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt style="color:black">
+            @Html.DisplayNameFor(model => model.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ime)
+        </dd>
+
+        <dt style="color:black">
+            @Html.DisplayNameFor(model => model.Prezime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prezime)
+        </dd>
+
+        <dt style="color:black">
+            @Html.DisplayNameFor(model => model.BrLK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrLK)
+        </dd>
+
+        <dt style="color:black">
+            @Html.DisplayNameFor(model => model.Slika)
+        </dt>
+
+        <dd style="opacity:1">
+            <img src="@Url.Content(Model.Slika)" width="100" height="100" />
+            
+        </dd>
+
+        <dt style="color:black">
+            @Html.DisplayNameFor(model => model.Racun)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Racun)
+        </dd>
+
+        <dt style="color:black">
+            @Html.DisplayNameFor(model => model.eMail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eMail)
+        </dd>
+
+      
+    </dl>
+</div>
+<p>
+    <h3>
+
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GostId }) 
+    </h3>
+    <hr />
+    <h3>
+    @Html.ActionLink("Nazad na listu usluga", "ListaUsluga", new { id = Model.GostId })
+    </h3>
+    
+</p>

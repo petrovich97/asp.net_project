@@ -1,0 +1,50 @@
+﻿@model EHotelServices.Models.PruzaUslugu
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PruzaUslugu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UslugaId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UslugaId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.termin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.termin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PibHotela)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PibHotela)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prihvacena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prihvacena)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

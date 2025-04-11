@@ -1,0 +1,52 @@
+﻿@model IEnumerable<EHotelServices.Models.Usluga>
+
+@{
+    ViewBag.Title = "IndexZaGosta";
+}
+
+<h2>Usluge hotela </h2>
+
+
+<table class="table" style="background-color:aliceblue; opacity:0.8">
+    <tr style="color:darkred">
+        <th>
+            @Html.DisplayNameFor(model => model.Tip)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opis)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Trajanje)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr style="color:black">
+        <td>
+            @Html.DisplayFor(modelItem => item.Tip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Opis)
+        </td>
+               
+        <td>
+            @Html.DisplayFor(modelItem => item.Trajanje)
+        </td>
+        <td>
+            |
+            @Html.ActionLink("Zahtevaj", "Zahtevaj", new { id=item.UslugaId }) 
+            |            
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,67 @@
+﻿@model EHotelServices.Models.Hotel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hotel</h4>
+    <hr />
+    <div>
+        <h4>
+            |
+
+            @Html.ActionLink("Edit", "Edit", new { id = Model.PibHotela })
+            |
+            @Html.ActionLink("Nazad na listu", "Index")
+            |
+
+        </h4>
+    </div>
+    <hr/>
+    <dl class="dl-horizontal" style="background-color:aliceblue; opacity:0.9">
+        <dt style="color:black">
+            @Html.DisplayNameFor(model => model.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ime)
+        </dd>
+
+        <dt style="color:black">
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+
+        <dt style="color:black">
+            @Html.DisplayNameFor(model => model.Slika)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.Slika)" width="250" height="250" />
+        </dd>
+
+        <hr />
+
+
+        <dt>
+            <p style="color:black"> Lokacija</p>
+        </dt>
+        @{
+            var lokacija = Model.Lokacija;
+            lokacija = lokacija.Replace(" ", "%20");
+            lokacija = "https://maps.google.com/maps?q=" + lokacija + "&t=&z=13&ie=UTF8&iwloc=&output=embed";
+
+        }
+
+        <dd>
+            <iframe src=@lokacija width="350" height="200" frameborder="0" scrolling="yes"</iframe>
+        </dd>
+        
+   </dl>
+</div>

@@ -1,0 +1,95 @@
+﻿@model IEnumerable<EHotelServices.Models.Osoblje>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Osoblje</h2>
+
+
+<table class="table" style="background-color:white; color:black; opacity:0.9">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prezime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatumRodjenja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrRacuna)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OpisDuznosti)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PibHotela)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Odobren)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prezime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatumRodjenja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BrRacuna)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpisDuznosti)
+        </td>
+        <td>
+            @using (Html.BeginForm("AzurirajPIB", "Osobljes",new { id = item.OsobljeId}, FormMethod.Get))
+            {
+
+            @Html.TextBox("PIB",item.PibHotela)
+            <button type="submit">"Azuriraj PIB"</button>
+            
+            }
+            
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Odobren)
+        </td>
+        <td>
+
+            |
+            @Html.ActionLink("Details", "Details", new { id = item.OsobljeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.OsobljeId })|
+            @if (item.Odobren == false)
+            {
+                @Html.ActionLink("Odobri", "Odobri", new { username = item.Username })
+            }
+            
+
+        </td>
+    </tr>
+}
+
+</table>
+<hr />
+

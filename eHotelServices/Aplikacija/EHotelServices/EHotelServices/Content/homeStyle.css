@@ -1,0 +1,22 @@
+﻿body {
+    
+    height:100%;
+    background-image: url('../Images/Hotel-Reception.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.homeDiv {
+    height:100%;
+    
+}
+
+footer {
+    position:fixed;
+    bottom: 0px;
+}
+
+html, body {
+    color: #ff6600;
+}
+

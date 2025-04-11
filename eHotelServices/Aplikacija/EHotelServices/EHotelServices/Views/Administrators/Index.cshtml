@@ -1,0 +1,41 @@
+﻿@model IEnumerable<EHotelServices.Models.Administrator>
+
+@{
+    ViewBag.Title = "Index";
+}
+ <h1>
+     Admin Panel
+ </h1>
+<hr />
+<div>
+    <div>
+        <h2>
+
+            @Html.ActionLink("Lista gostiju", "Index", "Gosts")
+        </h2>
+
+    </div>
+    <hr />
+    <div>
+        <h2>
+            @Html.ActionLink("Lista zaposlenih", "Index", "Osobljes")
+
+
+        </h2>
+    </div>
+    <hr />
+    <div>
+        <h2>
+            @Html.ActionLink("Lista hotela", "Index", "Hotels")
+
+        </h2>
+    </div>
+    <hr />
+    <div>
+        <h2>
+            @Html.ActionLink("Kreiraj hotel", "Create", "Hotels")
+
+        </h2>
+    </div>
+
+</div>

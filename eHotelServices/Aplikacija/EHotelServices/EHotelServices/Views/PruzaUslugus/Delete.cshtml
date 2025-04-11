@@ -1,0 +1,56 @@
+﻿@model EHotelServices.Models.PruzaUslugu
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PruzaUslugu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UslugaId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UslugaId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.termin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.termin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PibHotela)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PibHotela)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prihvacena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prihvacena)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
